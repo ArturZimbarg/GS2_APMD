@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./assets/js/cadastrar.js" defer></script>
+  <title>EpicTask</title>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Epic Task</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">tarefas</a></li>
+        <li class="active"><a href="cadastrar.html">criar tarefa</a></li>
+        <li><a href="perfil.html">sair</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h4>Cadastrar medicamento a ser tomado</h4>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="titulo" type="text" class="validate" minlength="3">
+            <label for="titulo">Título</label>
+            <span class="helper-text" data-success="">digite o título do remédio</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="descricao" class="materialize-textarea"></textarea>
+            <label for="descricao">Descrição</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="dias" type="number" class="validate" min="1" max="100">
+            <label for="dias">Número de dias que será tomado</label>
+            <span 
+              class="helper-text" 
+              data-error="Pontuação inválida. Informe um valor entre 1 e 100" 
+              data-success="">
+                indique o número de dias que o remédio deverá ser tomado
+            </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <a href="./index.html" class="btn grey">cancelar</a>
+          </div>
+          <div class="col">
+            <button id="botao-cadastrar" class="btn">salvar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </main>
+
+</body>
+
+</html>

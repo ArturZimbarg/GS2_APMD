@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página de Cadastro</title>
+  <style>
+    /* Estilos... */
+  </style>
+</head>
+<body>
+  <div class="cadastro-container">
+    <h2>Cadastrar novo usuario</h2>
+    <form id="cadastroForm" action="javascript:void(0);" method="post" onsubmit="return cadastrarUsuario()">
+      <label for="username">Usuário:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password" required>
+      <input type="radio" id="medico" name="role" value="medico">
+      <label for="medico">Médico</label>
+      <input type="radio" id="paciente" name="role" value="paciente">
+      <label for="paciente">Paciente</label>
+      <input type="submit" value="Cadastrar">
+    </form>
+  </div>
+
+  <script>
+    function cadastrarUsuario() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var role = document.querySelector('input[name="role"]:checked');
+
+      if (!role) {
+        alert('Por favor, selecione se é médico ou paciente.');
+        return false;
+      }
+
+      // Obtém o valor do papel selecionado (médico ou paciente)
+      role = role.value;
+
+      // Aqui você pode fazer a lógica para armazenar os dados em algum lugar, como localStorage ou enviar para um servidor
+      // Neste exemplo, apenas exibimos os dados no console para demonstração
+      console.log("Novo usuário cadastrado:");
+      console.log("Usuário:", username);
+      console.log("Senha:", password);
+      console.log("Papel:", role);
+
+      alert('Novo usuário cadastrado com sucesso!');
+      
+      // Redireciona para a página de login após um pequeno atraso (1000 milissegundos)
+      setTimeout(function() {
+        window.location.href = 'perfil.html';
+      }, 1000);
+
+      return false; // Impede o envio do formulário
+    }
+  </script>
+</body>
+</html>
